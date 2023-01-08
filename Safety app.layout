@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Release" />
+	<File name="creds.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="119" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="mail.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1273" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="Message.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="18" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="54" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13396" topLine="156" />
+		</Cursor>
+		<Folding>
+			<Collapse line="5" />
+			<Collapse line="115" />
+			<Collapse line="125" />
+			<Collapse line="129" />
+			<Collapse line="139" />
+			<Collapse line="144" />
+			<Collapse line="160" />
+			<Collapse line="181" />
+			<Collapse line="188" />
+			<Collapse line="228" />
+			<Collapse line="281" />
+			<Collapse line="304" />
+			<Collapse line="316" />
+			<Collapse line="378" />
+			<Collapse line="457" />
+			<Collapse line="466" />
+			<Collapse line="470" />
+			<Collapse line="478" />
+			<Collapse line="482" />
+			<Collapse line="490" />
+			<Collapse line="582" />
+		</Folding>
+	</File>
+</CodeBlocks_layout_file>
