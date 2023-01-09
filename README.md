@@ -4,7 +4,7 @@ The Safety App is actually a Password Generator, Manager, Symmetric & Asymmetric
 
 ## Before using saftey_app.exe do following steps to send email
 ### Step 1
-Enter gmail id in "GmailUR.txt" for receiving mails from that id in "GmailUR.txt".
+Enter gmail id in "GmailUR.txt" for receiving mails from that id.
 ### Step 2
 Enable 2 factor authentication in gmail id which you have entered in "GmailUR.txt".
 ### Step 3
