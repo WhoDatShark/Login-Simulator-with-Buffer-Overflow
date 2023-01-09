@@ -8,8 +8,8 @@ Enter gmail id in "GmailUR.txt" for receiving mails from that id.
 ### Step 2
 Enable 2 factor authentication in gmail id which you have entered in "GmailUR.txt".
 ### Step 3
-below 2 factor authentication you can see an option name app passwords click on that.\n
-i. In select app, select mail.\n 
+below 2 factor authentication you can see an option name app passwords click on that.
+i. In select app, select mail.
 ii. select device, custom name, enter "SMTP".
 
 ### Following are the features of the application 
