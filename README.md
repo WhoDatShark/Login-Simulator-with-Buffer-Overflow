@@ -1,8 +1,18 @@
 # Safety_App
 #This project was developed for the 5-day learning program by CyberPeace Corps between 5th and 9th January, 2023
-The Safety App is actually a Password Generator and Manager 
-To send an email, first enter an email id in GmailUR.txt and password in PassUR.txt
-It consists of the following features:
+The Safety App is actually a Password Generator, Manager, Symmetric & Asymmetric Key Generator and last Message Encryption & Decryption 
+
+## Before using saftey_app.exe do following steps to send email
+### Step 1
+Enter gmail id in "GmailUR.txt" for receiving mails from that id.
+### Step 2
+Enable 2 factor authentication in gmail id which you have entered in "GmailUR.txt".
+### Step 3
+below 2 factor authentication you can see an option name app passwords click on that.
+i. In select app, select mail.
+ii. select device, custom name, enter "SMTP".
+
+### Following are the features of the application 
  1. User registration: A user can register on the app using their email ID and password. 
  2. Password Manager: The passwords of registered users are saved in a file. 
  3. Password Verification: Each time a user logs in, their password is verified with the one stored in the file. After this, 2FA occurs.

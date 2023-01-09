@@ -229,19 +229,11 @@ void otpVerify(){
 void otpSend(string registered_email){
 	int min=5;
 	do{
-
-		// otp creation
 		srand(time(0));
 		for(int i=0;i<digit;i++){
 			otp[i]=rand()%9+1;
 		}
 
-		// otp prints
-		// for(int i=0;i<digit;i++){
-		// 	printf("%d ",number[i]);
-		// }
-
-		// message creation
 		ofstream file;
 		file.open("Message.txt");
 		file << "OTP-";
@@ -250,13 +242,16 @@ void otpSend(string registered_email){
 		}
 		file.close();
 
-		// email setting
 		file.open("Mail.txt");
 		file << registered_email;
 		file.close();
 
+		file.open("Subject.txt");
+		file<<"Otp for Verification";
+		file.close();
+
 		SendMail(0);
-		// otpVerify();
+		
 		std::cout << "OTP is valid for 5 min only!!" << std::endl;
 		auto result = std::async(std::launch::async, otpVerify);
 		auto start = std::chrono::steady_clock::now();
@@ -272,7 +267,6 @@ void otpSend(string registered_email){
 		initializeGlobalVariable();
 		result.get(); // Wait for the code to finish executing
 		std::cout << "Time Ends\n" << std::endl;
-
 
 	}while(otpResend);
 }
@@ -298,6 +292,10 @@ void symmetricKeyGen(string registered_email){
 	file << registered_email;
 	file.close();
 
+	file.open("Subject.txt");
+	file<<"Symmetric Key";
+	file.close();
+
 	// sending mail
 	SendMail(0);
 }
@@ -320,7 +318,6 @@ void generateTwoPrimeNumber(long long int* p,long long int *q){
 	while(run){
 		n=rand()%10+1;
 		*p=(6*n)-1;
-		// cout<<"np="<<n<<"\n";
 
 		for(int i=2;i<(*p-1);i++){
 			if(*p%i==0){
@@ -337,7 +334,6 @@ void generateTwoPrimeNumber(long long int* p,long long int *q){
 			for(int i=2;i<(*p-1);i++){
 				if(*p%i==0){
 					p_prime=0;
-					// cout<<"p\n";
 					break;
 				}
 				else{
@@ -347,7 +343,7 @@ void generateTwoPrimeNumber(long long int* p,long long int *q){
 		}
 
 		n=rand()%10+1;
-		// cout<<"nq="<<n<<"\n";
+		
 		*q=(6*n)+1;
 		for(int i=2;i<(*q-1);i++){
 			if(*q%i==0){
@@ -373,7 +369,7 @@ void generateTwoPrimeNumber(long long int* p,long long int *q){
 			run=0;
 		}
 	}
-	// cout<<"p="<<*p<<",q="<<*q;
+
 }
 
 void generateE(long long int* e,long long int* phi_n){
@@ -385,28 +381,24 @@ void generateE(long long int* e,long long int* phi_n){
 			a++;
 		}
 	}
-	// printf("\na");
+	
 	a--;
-	// for(long long int i=0;i<=a;i++){
-	// 	printf("%d,",factors[i]);
-	// }
+	
 	srand(time(0));
 	*e=rand()%*phi_n;
 	while(searchFactors(*e,factors,a)){
 		*e=rand()%*phi_n;
 	}
-	// cout<<"\neonly="<<*e;
+
 }
 
 void RSA::values()
 {
-	// cout<<"\nEnter Values of P & Q: ";
-	// cin>>p>>q;
 	generateTwoPrimeNumber(&p,&q);
-	// cout<<"p="<<p<<",q="<<q;
+
 	n=p*q;
 	phi_n=(p-1)*(q-1);
-	// cout<<"\nn="<<n<<",phi_n="<<phi_n;
+	
 T1:	generateE(&e,&phi_n);
 	if(e<0&&e>phi_n)
 		goto T1;
@@ -432,15 +424,13 @@ void RSA::eea()
 	}
     if(r1==1&&t1>0)
     {
-        // cout<<"\nP = "<<p<<"\nQ = "<<q<<"\nE = "<<e<<"\nN = "<<"\nPhi(N) = "<<phi_n<<"\nD = "<<t1;
 		d=t1;
     }
     if(r1==1&&t1<0)
     {
-        // cout<<"\nP = "<<p<<"\nQ = "<<q<<"\nE = "<<e<<"\nN = "<<n<<"\nPhi(N) = "<<phi_n<<"\nD = "<<t1+t2;
 		d=t1+t2;
     }
-	// cout<<"\ne="<<e<<",d="<<d;
+
 	cout<<"Asymmetric key will be mailed on the registered email address\n";
 
 	ofstream file;
@@ -450,6 +440,10 @@ void RSA::eea()
 
 	file.open("Mail.txt");
 	file<<registered_email;
+	file.close();
+
+	file.open("Subject.txt");
+	file<<"Asymmetric Keys";
 	file.close();
 
 	SendMail(0);
@@ -574,7 +568,11 @@ void encryption(string registered_email){
 	file.close();
 
 	file.open("Mail.txt");
-	file<<registered_email;              //receiver_email;      //
+	file<<registered_email; 
+	file.close();
+
+	file.open("Subject.txt");
+	file<<"Encrypted Text";
 	file.close();
 
 	SendMail(0);
@@ -614,10 +612,6 @@ void decryption(string registered_email){
 	cout<<"\nEnter email-id of the sender\n*Note: only you and the sender will be able to decrypt the text\n-->";
 	cin>>sender_email;
 
-	// int receiver=registered_email.length();
-	// int sender=sender_email.length();
-	// int secretKey=(sender+receiver)/2;
-
 	int receiver=registered_email.length();
 	int sender=sender_email.length();
 	int ind=0;
@@ -632,7 +626,6 @@ void decryption(string registered_email){
         secretKeyArr[ind]=registered_email[i];
         ind++;
     }
-
 
 	int secretKey=0;
     for(int i=0;i<(sender+receiver);i++){
@@ -664,6 +657,10 @@ void decryption(string registered_email){
 
 	file.open("Mail.txt");
 	file<<registered_email;
+	file.close();
+
+	file.open("Subject.txt");
+	file<<"Decrypted Text";
 	file.close();
 
 	SendMail(0);
@@ -709,14 +706,15 @@ int main(){
 						cin>>cho;
 						switch(cho){
 							case 1:
-								cout<<"\nGenerating Password"<<m.passGen();
-								getch();
+								m.passGen();
 								break;
 							case 2:
+								system("cls");
 								symmetricKeyGen(email);
 								getch();
 								break;
 							case 3:
+								system("cls");
 								ASkey.registered_email=email;
 								ASkey.values();
 								ASkey.eea();

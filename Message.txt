@@ -1,1 +1,1 @@
-OTP-5621
+Symmetric key --> 65
