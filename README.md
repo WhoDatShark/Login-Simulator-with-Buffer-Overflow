@@ -23,3 +23,4 @@ ii. select device, custom name, enter "SMTP".
  8. User-Key Generation: To communicate securely after logging in, user can generate a symmetric or asymmetric keys which will be sent on their mail. 
  9. Encryption: A message can be mailed to a user securely after it is encrypted with some keystream! User receives the ciphertext with a keystream which can be forwarded to the receiver.
  10. Decryption: The receiver is the only person who can decrypt that same message after logging in as the program verifies the sender and receiver while decrypting.
+This project can be implemented in any app requiring a password checker, manager and generator feature.
