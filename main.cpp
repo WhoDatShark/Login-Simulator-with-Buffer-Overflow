@@ -21,6 +21,7 @@ public:
         }
         showf.close();
     }
+	//stream values from map to creds.txt
     ~MAPS(){
         fstream file;
         file.open("creds.txt");
