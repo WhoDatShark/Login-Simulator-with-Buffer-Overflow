@@ -1,5 +1,5 @@
 # Safety_App
-#This project was developed on a 5-day Internship at CyberPeace Foundation between 5th and 9th January, 2023
+#This project was developed on a 5-day Internship program by CyberPeace Foundation between 5th and 9th January, 2023
 The Safety App is actually a Password Generator, Manager, Symmetric & Asymmetric Key Generator and last Message Encryption & Decryption 
 
 ## Before using saftey_app.exe do following steps to send email
